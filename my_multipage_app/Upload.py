@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from ydata_profiling import ProfileReport
-from streamlit_pandas_profiling import st_profile_report
+from ydata_profiling import ProfileReport
 from sklearn.datasets import load_iris, load_wine, load_diabetes
 from pingouin import multivariate_normality
 
