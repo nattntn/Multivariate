@@ -5,6 +5,16 @@ from ydata_profiling import ProfileReport
 from ydata_profiling import ProfileReport
 from sklearn.datasets import load_iris, load_wine, load_diabetes
 from pingouin import multivariate_normality
+import streamlit.components.v1 as components
+
+
+# ฟังก์ชันสำหรับแสดงรายงาน
+def show_profile_report(df):
+    profile = ProfileReport(df, explorative=True)
+    # สร้างรายงานในรูปแบบ HTML
+    profile_html = profile.to_html()
+    # แสดง HTML ด้วย components.html()
+    components.html(profile_html, height=1000, scrolling=True)
 
 def p_value():
     colss = st.columns(1)
@@ -94,8 +104,8 @@ def app():
 
         # การใช้ ydata-profiling
         st.write("## Data Profiling Report")
-        profile = ProfileReport(df, explorative=True)
-        st_profile_report(profile)
+        #profile = ProfileReport(df, explorative=True)
+        show_profile_report(df)
 
         if st.button('Data cleansing'):
             df2 = df.select_dtypes(include=['int', 'float'])
