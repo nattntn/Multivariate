@@ -1,2 +1,7 @@
 streamlit-option-menu
-ydata-profiling==4.10.0
+streamlit
+pandas
+numpy
+scikit-learn
+ydata-profiling
+setuptools
