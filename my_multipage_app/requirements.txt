@@ -1,2 +1,2 @@
 streamlit-option-menu
-#ydata-profiling==4.10.0
+ydata-profiling==4.10.0
